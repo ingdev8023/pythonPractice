@@ -26,3 +26,10 @@ favorite_songs([{"title": "Skip Track", "plays": 98}, {"title": "99 Downloads", 
 favorite_songs([{"title": "Song A", "plays": 42}, {"title": "Song B", "plays": 99}, {"title": "Song C", "plays": 75} ])
 
 
+#chat's solution
+
+def favorite_songs(playlist):
+    # Sort the playlist by play count in descending order
+    sorted_playlist = sorted(playlist, key=lambda song: song['plays'], reverse=True)
+    # Get the titles of the top two
+    return [song['title'] for song in sorted_playlist[:2]]
