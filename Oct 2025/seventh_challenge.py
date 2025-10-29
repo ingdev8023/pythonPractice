@@ -53,16 +53,3 @@ def create_character (character_name, strength, intelligence, charisma):
     return character
 
 create_character('ren', 4,2, 1)
-
-    
-
-    
-
-
-
-
-
-
-    
-
-
