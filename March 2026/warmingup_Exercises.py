@@ -103,3 +103,22 @@ def even_numbers(numbers):
 
 test_number_3 =[1,2,3,4,5,6]
 print(even_numbers(test_number_3))
+
+#Exercise 10 - Two sum
+
+def two_sum(target, numbers):
+    for i in range(len(numbers)):
+
+        for j in range(i + 1, len(numbers)):
+
+            if numbers[i] + numbers[j] == target:
+                return [i, j]
+
+    return None
+       
+
+nums_1 = [2,7,11,15]
+nums_2 = [3,2,4]
+target = 9
+
+print(two_sum(target, nums_1))
