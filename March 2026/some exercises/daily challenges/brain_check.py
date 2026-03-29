@@ -10,3 +10,5 @@ with open(log_file) as f:
             message = match_error.group(1).strip()
             user = match_error.group(2)
             print(f"ERROR | {user} | {message}")
+
+            
