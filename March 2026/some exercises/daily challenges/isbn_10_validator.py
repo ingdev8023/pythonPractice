@@ -37,9 +37,10 @@ print(is_valid_isbn10("0-306-40615-1"))
 print(is_valid_isbn10("X-306-40615-2"))
 print(is_valid_isbn10("0-8044-2957-X"))
 print(is_valid_isbn10("0-6822-2589-4"))
+print(is_valid_isbn10("|306-40615-X"))
 
 #chat's
-def is_valid_isbn10(s):
+""" def is_valid_isbn10(s):
     no_hyphens = s.replace("-", "")
 
     if len(no_hyphens) != 10:
@@ -56,4 +57,4 @@ def is_valid_isbn10(s):
         value = 10 if no_hyphens[i] == "X" else int(no_hyphens[i])
         total += (i + 1) * value
 
-    return total % 11 == 0
+    return total % 11 == 0 """
