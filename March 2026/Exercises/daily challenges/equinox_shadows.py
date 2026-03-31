@@ -53,7 +53,7 @@ print(get_shadow("00:00"))
 def get_shadow(time):
     hours = int(time[:2])
     minutes = int(time[3:])
-    total_hours = hours + minutes / 60
+    total_hours = hours + minutes / 3600
 
     if total_hours < 6 or total_hours >= 18 or total_hours == 12:
         return "No shadow"
