@@ -5,18 +5,15 @@ class Rectangle:
     def __init__(self, width, height):
         self.width = width
         self.height = height
-    
-    @abstractmethod
+
     def set_width(self, new_width):
         self.width = new_width
 
-    @abstractmethod
     def set_height(self, new_height):
         self.height = new_height   
     
     def get_area(self):
-        return self.height * self.width
-    
+        return self.height * self.width    
     
     def get_perimeter(self):
         return 2*(self.height + self.width)
@@ -28,47 +25,31 @@ class Rectangle:
 
         if self.width > 50 or self.height > 50:
             return 'Too big for picture.'
-
-        picture = ''
-        for _ in range(self.height):
-            for _ in range(self.width):
-                picture += '*'
-            picture +='\n'
-        return picture
+        
+        return ("*" * self.width + "\n") * self.height
     
     def get_amount_inside(self, obj):
-        if type(obj) is Square:
-           first_side = self.width / obj.side
-           second_side = self.height / obj.side
-           return first_side * second_side
-        if type(obj) is Rectangle:
-            first_check = self.width / obj.width 
-            second_check = self.height / obj.height
-            return math.floor(first_check * second_check)
-    
+        return math.floor(self.width // obj.width) * (self.height // obj.height)
+        
     def __str__(self):
         return f'Rectangle(width={self.width}, height={self.height})'
 
 class Square(Rectangle):
     def __init__(self,side):
-        self.width = side
-        self.height = side
-        self.side = side
-    
-    def set_width(self, side):
-        self.width =  side
-        self.height =  side
-        self.side = side
-
-    def set_height(self, side):
-        self.width =  side
-        self.height =  side
-        self.side = side
+        super().__init__(side, side)
 
     def set_side(self, new_side):
         self.width = new_side
         self.height = new_side
-        self.side = new_side
+               
+    
+    def set_width(self, side):
+        self.set_side(side)
+
+    def set_height(self, side):
+        self.set_side(side)
+
+  
     
     def __str__(self):
         return f'Square(side={self.side})'
